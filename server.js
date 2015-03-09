@@ -14,7 +14,7 @@ res.sendFile(__dirname + '/client');
 mongodb://<dbuser>:<dbpassword>@ds061518.mongolab.com:61518/rashmi
 */
 
-mongoose.connect(' mongodb://rashmi1:vnit2014@ds061518.mongolab.com:61518/rashmi');
+mongoose.connect('mongodb://rashmi1:vnit2014@ds061518.mongolab.com:61518/rashmi');
 app.use(bodyParser());
 console.log('value of ******** dirname: ', __dirname);
 app.use(express.static(__dirname +'/client'));
