@@ -1,0 +1,24 @@
+app.controller('reviewscontroller',['$scope','$resource' , function  ($scope, $resource) {
+
+var Review = $resource('/api/reviews');
+
+Review.query(function(results){
+
+	$scope.meetups =results;
+});    
+
+	$scope.createreview = function()
+	{
+		var rv = new Review();
+		rv.name = $scope.meetupName;
+		rv.$save(function(result) {
+			$scope.meetups.push(result);
+			$scope.meetupName ='';
+		});
+
+	}
+
+
+
+}])
+
